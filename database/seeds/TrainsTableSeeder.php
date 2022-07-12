@@ -14,7 +14,6 @@ class TrainsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         $companies = ['GWR', 'Stansted Express', 'Gatwick Express', 'Amtrak', 'Soo Line Railroad'];
-        $times = ['2022-06-15', '2023-06-12', '2022-08-14'];
 
         for($i=0; $i < 20; $i++) {
             $newTrain = new Train();
@@ -24,7 +23,7 @@ class TrainsTableSeeder extends Seeder
             $newTrain->arrival_station = $faker->city();
             $newTrain->train_code = $faker->numerify('#####');
             $newTrain->wagon = rand(1, 100);
-            $newTrain->departure_date = $times[rand(0,(count($times) - 1))];
+            $newTrain->departure_date = $faker->dateTimeBetween(date('Y-m-d'), '+1 week');
             
             $newTrain->save(); //to insert new columns value setted
         }

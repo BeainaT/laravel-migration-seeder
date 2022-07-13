@@ -23,8 +23,7 @@ class TrainsTableSeeder extends Seeder
             $newTrain->arrival_station = $faker->city();
             $newTrain->train_code = $faker->numerify('#####');
             $newTrain->wagon = rand(1, 100);
-            $newTrain->departure_date = $faker->dateTimeBetween(date('Y-m-d'), '+1 week');
-            
+            $newTrain->departure_date = $faker->dateTimeBetween(date('Y-m-d'), '+1 week');            
             $newTrain->save(); //to insert new columns value setted
         }
     }

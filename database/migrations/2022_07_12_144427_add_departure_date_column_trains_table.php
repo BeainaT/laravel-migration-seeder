@@ -14,7 +14,7 @@ class AddDepartureDateColumnTrainsTable extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->string('departure_date');
+            $table->date('departure_date');
         });
     }
 
